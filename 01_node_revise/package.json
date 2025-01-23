@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "pnpm": "^9.15.4"
+  },
+  "name": "node",
+  "version": "1.0.0",
+  "description": "i am leanring nest js ",
+  "main": "myNode.js",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "node myNode.js"
+  },
+  "author": "Noor Nazar",
+  "license": "ISC"
+}

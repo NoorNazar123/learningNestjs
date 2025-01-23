@@ -1,0 +1,29 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.swn
+*.~lock.*
+
+# Compiled code
+*.class
+*.o
+*.so
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock

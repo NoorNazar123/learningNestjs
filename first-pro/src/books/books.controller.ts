@@ -1,28 +1,27 @@
-import { Controller, Delete, Get, Post, Put, Req } from '@nestjs/common';
-import { Request } from '@nestjs/common';
+import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import { BooksService } from './books.service';
 
 @Controller('books')
 export class BooksController {
-    constructor() {
-        console.log("Books Controller");
+    constructor(private readonly booksService: BooksService) { }
 
-    }
     @Post("/add")
     addBook(): string {
-        return "create book"
+        return this.booksService.addBook(); // Call service method
     }
+
     @Put("update")
     updateBook(): string {
-        return "update book"
+        return this.booksService.updateBook(); // Call service method
     }
+
     @Delete("delete")
-    adddelete(): string {
-        return "delete book"
+    deleteBook(): string {
+        return this.booksService.adddelete(); // Call service method
     }
+
     @Get("all")
-    findAllBook(@Req() request): string {
-        console.log(request.url);
-        console.log(request.query);
-        return "find All book"
+    findAllBooks(): string {
+        return this.booksService.findAllBook(); // Call service method
     }
 }

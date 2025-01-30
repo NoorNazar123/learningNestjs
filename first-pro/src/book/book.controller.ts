@@ -1,9 +1,11 @@
-import { Controller, Get, Post, Param, ParseIntPipe, Body } from "@nestjs/common";
+import { Controller, Get, Post, Param, ParseIntPipe, Body, UseGuards } from "@nestjs/common";
 import { BookPipe } from "./validation.pipe";
 import { BookData } from "./book.dto";
+import { BookGuard } from "./book.guard";
 
 @Controller("book")
 export class BookController {
+    @UseGuards(new BookGuard())
     @Get("/allbook/:id")
     allBook(@Param("id", ParseIntPipe) id: number): string {
         console.log(id, typeof id);
